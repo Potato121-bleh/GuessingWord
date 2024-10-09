@@ -1,0 +1,55 @@
+.man {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90px;
+    height: 200px;
+    padding: 0;
+    list-style: none;
+    border: solid red;
+}
+
+.head-man {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: solid black;
+}
+
+.body-man {
+    border: solid black;
+    background: black;
+    width: 7px;
+    height: 100px;
+}
+
+.left-right-man {
+    list-style: none;
+    padding: 0;
+    height: 30px;
+    display: flex;
+}
+
+.left-hand-man {
+    border: solid black;
+    background: black;
+    width: 6px;
+    height: 36px;
+    transform: rotateZ(135deg) translate(-62px, 44px);
+}
+
+.right-hand-man {
+    border: solid black;
+    background: black;
+    width: 6px;
+    height: 36px;
+    transform: rotateZ(45deg) translate(-64px, -43px);
+}
+
+.hand {
+    transform: translate(1px, 10px);
+}
+
+.leg {
+    transform: translate(1px, 35px);
+}
