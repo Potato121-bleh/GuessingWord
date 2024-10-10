@@ -1,0 +1,149 @@
+.cloud-con {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.first-cloud {
+  width: 400px !important;
+  height: 150px !important;
+  transform: translate(-60px, 60px);
+  animation: firstcloud 7s infinite ease-in-out;
+}
+.second-cloud {
+  transform: translate(-200px, -10px);
+  animation: secondcloud 7s infinite ease-in-out;
+}
+.third-cloud {
+  width: 400px !important;
+  height: 100px !important;
+  transform: translate(-60px, 20px);
+  animation: thirdcloud 7s infinite ease-in-out;
+}
+/*  */
+.guidepage-con {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.content {
+  margin-top: 100px;
+  margin: auto;
+}
+.textBox {
+  position: relative;
+  background-color: white;
+  padding: 20px;
+  width: 600px;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.speech-tail {
+  position: absolute;
+  bottom: -20px;
+  left: 80px;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid white;
+}
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #36304a;
+}
+.person {
+  margin-left: -30px;
+}
+.star {
+  position: relative;
+  transform: translate(560px, 70px);
+  z-index: 200;
+}
+/* responsive */
+@media (max-width: 725px) {
+  .textBox {
+    width: 300px;
+  }
+  .star {
+    position: relative;
+    transform: translate(280px, 60px);
+    z-index: 200;
+  }
+  .star img {
+    width: 120px;
+  }
+}
+@media (max-width: 420px) {
+  .textBox {
+    width: 200px;
+  }
+  .star {
+    position: relative;
+    transform: translate(190px, 60px);
+  }
+  .star img {
+    width: 100px;
+  }
+  .person img {
+    width: 100px;
+    height: 200px;
+  }
+}
+/* animation */
+@keyframes firstcloud {
+  0% {
+    transform: translate(-60px, 60px);
+  }
+  25% {
+    transform: translate(-50px, 60px);
+  }
+  50% {
+    transform: translate(-40px, 60px);
+  }
+  75% {
+    transform: translate(-50px, 60px);
+  }
+  100% {
+    transform: translate(-60px, 60px);
+  }
+}
+@keyframes secondcloud {
+  0% {
+    transform: translate(-200px, -10px);
+  }
+  25% {
+    transform: translate(-180px, -10px);
+  }
+  50% {
+    transform: translate(-160px, -10px);
+  }
+  75% {
+    transform: translate(-180px, -10px);
+  }
+  100% {
+    transform: translate(-200px, -10px);
+  }
+}
+@keyframes thirdcloud {
+  0% {
+    transform: translate(-60px, 20px);
+  }
+  25% {
+    transform: translate(-40px, 20px);
+  }
+  50% {
+    transform: translate(-20px, 20px);
+  }
+  75% {
+    transform: translate(-40px, 20px);
+  }
+  100% {
+    transform: translate(-60px, 20px);
+  }
+}

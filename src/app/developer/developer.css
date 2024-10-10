@@ -1,0 +1,184 @@
+.cloud-con {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.first-cloud {
+  width: 400px !important;
+  height: 150px !important;
+  transform: translate(-100px, 60px);
+  animation: firstcloudDev 7s infinite ease-in-out;
+}
+.second-cloud {
+  transform: translate(150px, -10px);
+  animation: secondcloudDev 7s infinite ease-in-out;
+}
+.third-cloud {
+  width: 300px !important;
+  height: 150px !important;
+  transform: translate(160px, 20px);
+  animation: thirdcloudDev 7s infinite ease-in-out;
+}
+/* end cloud */
+/* starting developer  */
+.developer-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+.info .title {
+  width: 300px;
+  margin: auto;
+  margin-top: 70px;
+  font-size: 70px;
+  color: rgb(80, 80, 198);
+  margin-bottom: 70px;
+}
+
+.developerinfo-con {
+  display: flex;
+}
+
+.cloud-con {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.developer-info-con {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px 200px;
+
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.developer-info {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  text-align: left;
+}
+
+.developer-item {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.number {
+  font-size: 40px;
+  font-weight: bold;
+  color: #1f2a57;
+  margin-left: 10px;
+}
+
+.developer-name h2 {
+  font-size: 23px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.developer-name p {
+  font-size: 17px;
+  color: #888;
+  margin: 5px 0 0;
+}
+
+/* responsive */
+@media (max-width: 465px) {
+  .info .title {
+    width: 200px;
+    margin-top: 70px;
+
+    font-size: 50px;
+  }
+  .developer-info {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: left;
+  }
+  .developer-item {
+    margin-right: 10px;
+  }
+  .developer-item img {
+    width: 50px;
+    height: 50px;
+  }
+  .number {
+    font-size: 30px;
+  }
+  .developer-name h2 {
+    font-size: 20px;
+  }
+  .developer-name p {
+    font-size: 15px;
+  }
+}
+@keyframes firstcloudDev {
+  0% {
+    transform: translate(-100px, 60px);
+  }
+  25% {
+    transform: translate(-80px, 60px);
+  }
+  50% {
+    transform: translate(-60px, 60px);
+  }
+  75% {
+    transform: translate(-80px, 60px);
+  }
+  100% {
+    transform: translate(-100px, 60px);
+  }
+}
+@keyframes secondcloudDev {
+  0% {
+    transform: translate(150px, -10px);
+  }
+  25% {
+    transform: translate(130px, -10px);
+  }
+  50% {
+    transform: translate(110px, -10px);
+  }
+  75% {
+    transform: translate(130px, -10px);
+  }
+  100% {
+    transform: translate(150px, -10px);
+  }
+}
+@keyframes thirdcloudDev {
+  0% {
+    transform: translate(160px, 20px);
+  }
+  25% {
+    transform: translate(140px, 20px);
+  }
+  50% {
+    transform: translate(120px, 20px);
+  }
+  75% {
+    transform: translate(140px, 20px);
+  }
+  100% {
+    transform: translate(160px, 20px);
+  }
+}
