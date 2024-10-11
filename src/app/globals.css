@@ -4,5 +4,5 @@ body {
   padding: 0;
   box-sizing: border-box;
   background-color: #d9edea;
-  overflow: hidden;
+  overflow-x: hidden;
 }
