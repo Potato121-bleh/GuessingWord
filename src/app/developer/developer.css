@@ -2,6 +2,7 @@
   padding-top: 20px;
   display: flex;
   justify-content: space-between;
+  position: absolute;
 }
 .first-cloud {
   width: 400px !important;
@@ -29,7 +30,9 @@
 
   overflow: hidden;
 }
-
+.info {
+  margin-top: 3%;
+}
 .info .title {
   width: 300px;
   margin: auto;
@@ -37,10 +40,8 @@
   font-size: 70px;
   color: rgb(80, 80, 198);
   margin-bottom: 70px;
-}
-
-.developerinfo-con {
-  display: flex;
+  position: relative;
+  z-index: 2;
 }
 
 .cloud-con {
@@ -54,11 +55,10 @@
   display: flex;
   flex-wrap: wrap;
   gap: 50px 200px;
+  margin-bottom: 50pxs;
 
   justify-content: center;
   list-style-type: none;
-  padding: 0;
-  margin: 0;
 }
 
 .developer-info {
