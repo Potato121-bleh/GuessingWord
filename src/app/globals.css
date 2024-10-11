@@ -6,3 +6,8 @@ body {
   background-color: #d9edea;
   overflow-x: hidden;
 }
+@media (max-width: 800px) {
+  .cloud-con {
+    visibility: hidden;
+  }
+}
