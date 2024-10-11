@@ -5,8 +5,8 @@ import "./developer.css";
 const developer = () => {
   const developers = [
     { id: 1, name: "Ly Sochetra", role: "System Developer" },
-    { id: 3, name: "Ra Kimly", role: "Data Writer" },
     { id: 2, name: "Hem Theavin", role: "UI Developer" },
+    { id: 3, name: "Ra Kimly", role: "Data Writer" },
     { id: 4, name: "Tang Hokheng", role: "UI Assist" },
   ];
   return (
