@@ -49,3 +49,23 @@
         height: 50px;
     }
 }
+
+@media (max-width: 485px) {
+    .main-con {
+        width: 40px;
+        height: 40px;
+        
+    }
+}
+
+@media (max-width: 410px) {
+    .main-con {
+        width: 30px;
+        height: 30px;
+        .sub-con {
+            h1{
+                font-size: 20px;
+            }
+        }
+    }
+}
