@@ -1,9 +1,16 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import "./welcome.css";
 import Link from "next/link";
 
 const welcomepage = () => {
+  const handleSoundEffect = () => {
+    let soundEffect = new Audio("/audio/clickSoundEffect.mp3");
+    soundEffect.play();
+  };
+
   return (
     <div className="welcome-con">
       <div className="cloud-con">
@@ -40,13 +47,21 @@ const welcomepage = () => {
         </ul>
         <ul className="menu-info">
           <Link href="/developer">
-            <li className="menu-Developer">Developer</li>
+            <li onClick={handleSoundEffect} className="menu-Developer">
+              Developer
+            </li>
           </Link>
           <Link href="/guide">
-            <li className="menu-howToPlay"> How To Play</li>
+            <li onClick={handleSoundEffect} className="menu-howToPlay">
+              {" "}
+              How To Play
+            </li>
           </Link>
           <Link href="/guess-the-word">
-            <li className="menu-start"> Start Now</li>
+            <li onClick={handleSoundEffect} className="menu-start">
+              {" "}
+              Start Now
+            </li>
           </Link>
         </ul>
       </div>

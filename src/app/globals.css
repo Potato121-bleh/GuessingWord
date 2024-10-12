@@ -8,6 +8,6 @@ body {
 }
 @media (max-width: 800px) {
   .cloud-con {
-    visibility: hidden;
+    display: none;
   }
 }

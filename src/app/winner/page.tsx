@@ -1,10 +1,22 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import "./winner.css";
+import Link from "next/link";
 
 const winnerpage = () => {
+  useEffect(() => {
+    let congratSoundEff = new Audio("/audio/congratSoundEff.mp3");
+    congratSoundEff.play();
+  }, []);
   return (
     <div className="winner-con">
+      <div className="backhome-con">
+        <Link className="backhome-element" href="/welcome">
+          Back Home
+        </Link>
+      </div>
       <div className="img-winner">
         <Image src="/winner.png" width={300} height={100} alt="winner" />
       </div>

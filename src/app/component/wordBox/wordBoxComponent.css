@@ -59,12 +59,3 @@
     font-size: 30px;
   }
 }
-@media (max-width: 560px) {
-  .main-con {
-    width: 25px;
-    height: 25px;
-  }
-  .sub-con h1 {
-    font-size: 20px;
-  }
-}

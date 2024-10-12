@@ -25,6 +25,8 @@
   animation: thirdcloudWel 7s infinite ease-in-out;
 }
 .title-wel {
+  position: relative;
+  z-index: 2;
   width: 300px;
   margin-top: 90px;
   margin: auto;
@@ -163,5 +165,12 @@ a {
   }
   100% {
     transform: translate(-60px, 20px);
+  }
+}
+
+
+@media (max-width: 800px) {
+  .cloud-con {
+    display: none;
   }
 }

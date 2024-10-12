@@ -4,52 +4,46 @@ import WordBox from '../component/wordBox/wordBox'
 import Image from 'next/image'
 import './guessTheWord.css'
 import { redirect, useRouter } from 'next/navigation'
-import { LegacyRef, useRef, useState } from 'react'
+import { LegacyRef, useEffect, useRef, useState } from 'react'
 import { nameEasyArr, type nameEasyArrType } from './words'
 
 const handleRandom = (NumOfRand: number) => {
     let randomIntTem: number = Math.floor(Math.random() * NumOfRand)
     return randomIntTem
 }
+
 let tracker: number = 0
+let trackerForUseEffect: number = 0
+//let selectedWordPlayV: string[] = []
+//let randomInt4: number = handleRandom(5) //0 -> 4
+//let randomInt3: number = handleRandom(4) //0 -> 3
+//let randomInt25: number = handleRandom(25) //0 -> 24
+//let heartArr: number[] = [1, 1, 1, 1, 1, 1]
+
 let selectedWordPlayV: string[] = []
-let randomInt4: number = handleRandom(5) //0 -> 4
-let randomInt3: number = handleRandom(4) //0 -> 3
-//let randomInt50: number = handleRandom(50)
-let randomInt25: number = handleRandom(25) //0 -> 24
+let randomInt4: number = handleRandom(5)
+let randomInt3: number = handleRandom(4)
+let randomInt25: number = handleRandom(25)
 let heartArr: number[] = [1, 1, 1, 1, 1, 1]
 
-//HERE IS WHAT WE DONE:
-//we try already built the system to validate before open for play
-//and it will adding letter on every refresh of page. (we can try using tracker) //PAY ATTENTION TO THAT
-//and we also build the system of how it should behave
-
 export default function GuessPage() {
-    console.log('THE PAGE HAS RENDERED')
-    let [test, setest] = useState()
     const guessRef = useRef<HTMLButtonElement>(null)
     const inputRef = useRef<HTMLInputElement>(null)
     const startRef = useRef<HTMLButtonElement>(null)
     let [hint, setHint] = useState<string>('')
     let router = useRouter()
-    tracker++
     let [selectedWordPlayForRender, setselectedWordPlayForRender] = useState<
         string[]
     >([])
     let [heartArrforRender, setheartArrforRender] = useState<number[]>([])
-
-    let [triggerRender, setTriggerRender] = useState<boolean>(false)
-
-    //let randomInt50: number = handleRandom(50)
-
     let selectedWord = nameEasyArr[randomInt25]
-    console.log(selectedWord)
     let selectedWordArr = selectedWord.name.split('')
-    console.log(selectedWordArr)
-    console.log(tracker)
-    //ALL CODE BELOW HERE IS FOR VALIDATION BEFORE GAME START
 
+    //ALL CODE BELOW HERE IS FOR VALIDATION BEFORE GAME START
     const handleStartGame = () => {
+        let soundEffect = new Audio('/audio/clickSoundEffect.mp3')
+        soundEffect.play()
+        console.log(selectedWordArr)
         setheartArrforRender([1, 1, 1, 1, 1, 1])
         for (let i = 0; i < selectedWordArr.length; i++) {
             selectedWordPlayV.push('')
@@ -113,6 +107,9 @@ export default function GuessPage() {
                 //Doing validation of how system adding userinput into wordBox
                 for (let i = 0; i < selectedWordArr.length; i++) {
                     if (selectedWordArr[i] == userinput) {
+                        console.log('it about to slice in wordbox :')
+                        console.log(selectedWordPlayV)
+                        console.log('DAMN')
                         selectedWordPlayV.splice(i, 1, userinput)
                         //setselectedWordPlayForRender(selectedWordPlayV)
                     }
@@ -124,8 +121,11 @@ export default function GuessPage() {
                         (element, index) => element == selectedWordPlayV[index]
                     )
                 ) {
-                    window.alert('YOU LOSE 1 LIFE!!')
-
+                    //window.alert('YOU LOSE 1 LIFE!!')
+                    let buzzSoundEffect = new Audio(
+                        '/audio/buzzWrongSoundEffect.mp3'
+                    )
+                    buzzSoundEffect.play()
                     //We check if it only has 4 life we give a hint1
                     if (heartArr[1] == 0 && heartArr[2] == 1) {
                         setHint('Hint: ' + selectedWord.hint1)
@@ -135,15 +135,20 @@ export default function GuessPage() {
                     //We check if it only has 2 life we give a hint2
                     //For deleting player heart
                     //Check before delete it
-                    let heartArrValidation = [0, 0, 0, 0, 0, 0]
+                    let heartArrValidation = [0, 0, 0, 0, 0, 1]
                     if (
                         heartArr.every(
                             (element, index) =>
                                 element == heartArrValidation[index]
                         )
                     ) {
-                        console.log('PLAYER HAS NO MORE LIVE')
-                        //redirect('/tryAgain')
+                        selectedWordPlayV = []
+                        randomInt4 = handleRandom(5)
+                        randomInt3 = handleRandom(4)
+                        randomInt25 = handleRandom(25)
+                        heartArr = [1, 1, 1, 1, 1, 1]
+                        router.replace('/tryAgain')
+                        return
                     } else {
                         console.log('PLAYER STILL HAVE LIFE')
                         for (let i = 0; i < heartArr.length; i++) {
@@ -158,6 +163,8 @@ export default function GuessPage() {
                     }
                 } else {
                     let selectedWordPlayVPrep = [...selectedWordPlayV]
+                    let checkSoundEffect = new Audio('/audio/checkSoundEff.mp3')
+                    checkSoundEffect.play()
                     setselectedWordPlayForRender(selectedWordPlayVPrep)
                 }
 
@@ -168,8 +175,15 @@ export default function GuessPage() {
                     }
                 }
                 //REDIRECT IS NOT WORKING
-                window.alert('THE PLAYER HAS WIN')
-                //redirect('/Winnder-Winner-chicken-dinnner')
+                selectedWordPlayV = []
+                randomInt4 = handleRandom(5)
+                randomInt3 = handleRandom(4)
+                randomInt25 = handleRandom(25)
+                heartArr = [1, 1, 1, 1, 1, 1]
+                //window.alert('You WIN')
+                router.replace('/winner')
+
+                //redirect('/Winnder-Winner-chicken-dinner')
             }
         } else {
             window.alert('Please Guess something!')

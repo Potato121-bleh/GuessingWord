@@ -1,3 +1,20 @@
+.backhome-con {
+  position: absolute;
+  margin: 40px;
+  z-index: 2;
+}
+
+.backhome-element {
+  text-decoration: none;
+    border-radius: 10px;
+    color: black;
+    padding: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    background: #aee5dc;
+}
+
+
 .cloud-con {
   padding-top: 20px;
   display: flex;
@@ -145,5 +162,12 @@
   }
   100% {
     transform: translate(-60px, 20px);
+  }
+}
+
+
+@media (max-width: 800px) {
+  .cloud-con {
+    display: none;
   }
 }
