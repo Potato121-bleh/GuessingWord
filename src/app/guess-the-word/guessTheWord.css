@@ -162,6 +162,11 @@
     transform: translate(50px, 27px);
   }
 }
+@media (max-width: 800px) {
+  .cloud-con {
+    display: none;
+  }
+}
 .man {
   display: flex;
   flex-direction: column;

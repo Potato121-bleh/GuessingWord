@@ -2,31 +2,35 @@
 
 import Image from 'next/image'
 import React, { useEffect } from 'react'
-import './tryAgain.css'
+import './winner.css'
 import Link from 'next/link'
 
-const tryPage = () => {
+const winnerpage = () => {
     useEffect(() => {
-        let suspenseSoundEff = new Audio('/audio/suspenseSoundEffect.mp3')
-        suspenseSoundEff.play()
+        let congratSoundEff = new Audio('/audio/congratSoundEff.mp3')
+        congratSoundEff.play()
     }, [])
-
     return (
-        <div className="loser-con">
+        <div className="winner-con">
             <div className="backhome-con">
                 <Link className="backhome-element" href="/welcome">
                     Back Home
                 </Link>
             </div>
-            <div className="img-loser">
-                <Image src="/lose.png" width={300} height={100} alt="winner" />
+            <div className="img-winner">
+                <Image
+                    src="/winner.png"
+                    width={300}
+                    height={100}
+                    alt="winner"
+                />
             </div>
             <div className="speech-Box">
-                <p>Try Again!!!</p>
-                <div className="speech-tail-loser"></div>
+                <p>Congratulation!!!</p>
+                <div className="speech-tail-winner"></div>
             </div>
             <Image
-                className="pploser"
+                className="ppwinner"
                 src="/person.png"
                 width={200}
                 height={300}
@@ -36,4 +40,4 @@ const tryPage = () => {
     )
 }
 
-export default tryPage
+export default winnerpage
