@@ -3,7 +3,7 @@
   height: 70px;
   border-radius: 11px;
   border: solid #fad593 4px;
-  background: #754E31;
+  background: #754e31;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,5 +11,60 @@
 
 .sub-con h1 {
   font-size: 50px;
-  color: #E3A430;
+  color: #e3a430;
+}
+@media (max-width: 950px) {
+  .main-con {
+    width: 50px;
+    height: 50px;
+  }
+  .sub-con h1 {
+    font-size: 35px;
+  }
+}
+@media (max-width: 680px) {
+  .main-con {
+    width: 40px;
+    height: 40px;
+  }
+  .sub-con h1 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 560px) {
+  .main-con {
+    width: 25px;
+    height: 25px;
+  }
+  .sub-con h1 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 950px) {
+  .main-con {
+    width: 50px;
+    height: 50px;
+  }
+  .sub-con h1 {
+    font-size: 35px;
+  }
+}
+@media (max-width: 680px) {
+  .main-con {
+    width: 40px;
+    height: 40px;
+  }
+  .sub-con h1 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 560px) {
+  .main-con {
+    width: 25px;
+    height: 25px;
+  }
+  .sub-con h1 {
+    font-size: 20px;
+  }
 }

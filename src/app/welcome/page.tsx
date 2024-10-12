@@ -45,7 +45,7 @@ const welcomepage = () => {
           <Link href="/guide">
             <li className="menu-howToPlay"> How To Play</li>
           </Link>
-          <Link href="/">
+          <Link href="/guess-the-word">
             <li className="menu-start"> Start Now</li>
           </Link>
         </ul>
