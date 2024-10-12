@@ -23,6 +23,7 @@ export default function GuessPage() {
     const inputRef = useRef<HTMLInputElement>(null)
     const startRef = useRef<HTMLButtonElement>(null)
     let [hint, setHint] = useState<string>('')
+    let [definition, setDefinition] = useState<string>('')
     let router = useRouter()
     let [selectedWordPlayForRender, setselectedWordPlayForRender] = useState<
         string[]
@@ -36,6 +37,7 @@ export default function GuessPage() {
         let soundEffect = new Audio('/audio/clickSoundEffect.mp3')
         soundEffect.play()
         console.log(selectedWordArr)
+        setDefinition('Definition: ' + selectedWord.definition)
         setheartArrforRender([1, 1, 1, 1, 1, 1])
         for (let i = 0; i < selectedWordArr.length; i++) {
             selectedWordPlayV.push('')
@@ -233,6 +235,7 @@ export default function GuessPage() {
                         </button>
                     </li>
                     <li>
+                        <p className="hint-text">{definition}</p>
                         <p className="hint-text">{hint}</p>
                     </li>
                 </ul>
