@@ -1,6 +1,6 @@
 .main-con-page {
   height: 100vh;
-
+  margin-top: 65px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -224,16 +224,27 @@
 .leg {
   transform: translate(1px, 35px);
 }
+
 @media (max-width: 800px) {
+  .main-con-page {
+    height: 75vh;
+    margin-top: 65px !important;
+  }
   .cloud-con-abs {
     display: none;
   }
 }
 /* box responsive */
-
-@media (max-width: 950px) {
+@media (max-width: 952px) {
+  .content-page {
+    height: auto;
+  }
+  .hint-text {
+    font-size: 10px;
+  }
   .content-rightside img {
     width: 50px;
+    height: 50px;
   }
   .content-btn-typehere {
     width: 170px;
@@ -242,6 +253,7 @@
 @media (max-width: 680px) {
   .content-rightside img {
     width: 40px;
+    height: 40px;
   }
   .content-btn-typehere {
     width: 170px;
@@ -275,8 +287,8 @@
 } */
 @media (max-width: 600px) {
   .main-con-page {
-    height: 50vh;
-    margin-top: 40%;
+    height: auto;
+    margin-top: 25%;
   }
   .content-page {
     display: flex;
@@ -288,26 +300,25 @@
     text-align: center;
     font-size: 12px;
   }
-  .content-wordbox-con {
-    margin-left: 15%;
-  }
   .content-leftside {
-    width: 90%;
+    width: 68%;
+    margin-left: 15%;
   }
   .content-wordbox-con {
     width: 90%;
   }
   .content-btn-typehere {
     padding: 5px;
-    font-size: 15px;
+    padding-left: 10px;
+    font-size: 10px;
     margin-left: 50px;
   }
   .content-btn-guess {
-    font-size: 15px;
-    padding: 5px;
+    font-size: 10px;
+    padding: 8px;
   }
   .content-rightside img {
-    width: 30px;
+    width: 20px;
     height: 20px;
   }
 }

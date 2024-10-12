@@ -15,3 +15,37 @@
         color: #E3A430;
     }
 }
+
+@media (max-width: 870px) {
+    .main-con {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 800px) {
+    .main-con {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+@media (max-width: 700px) {
+    .main-con {
+        width: 45px;
+        height: 45px;
+        .sub-con {
+            h1{
+                font-size: 35px;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 600px) {
+    .main-con {
+        width: 50px;
+        height: 50px;
+    }
+}

@@ -93,6 +93,7 @@ export default function GuessPage() {
         let inputElement = document.getElementById(
             'input-typehere-id'
         ) as HTMLInputElement
+
         //COULD BE AN ERROR CONVERTING INTO UPPERCASE
         let userinput = inputElement.value.toUpperCase()
         if (userinput) {
@@ -121,7 +122,7 @@ export default function GuessPage() {
                         (element, index) => element == selectedWordPlayV[index]
                     )
                 ) {
-                    //window.alert('YOU LOSE 1 LIFE!!')
+                    inputElement.value = ''
                     let buzzSoundEffect = new Audio(
                         '/audio/buzzWrongSoundEffect.mp3'
                     )
@@ -163,6 +164,7 @@ export default function GuessPage() {
                     }
                 } else {
                     let selectedWordPlayVPrep = [...selectedWordPlayV]
+                    inputElement.value = ''
                     let checkSoundEffect = new Audio('/audio/checkSoundEff.mp3')
                     checkSoundEffect.play()
                     setselectedWordPlayForRender(selectedWordPlayVPrep)
@@ -254,7 +256,7 @@ export default function GuessPage() {
                         </button>
                     </li>
                     <li>
-                        <p>{hint}</p>
+                        <p className="hint-text">{hint}</p>
                     </li>
                 </ul>
                 <ul className="content-rightside">
