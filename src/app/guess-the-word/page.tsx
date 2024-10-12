@@ -3,22 +3,14 @@
 import WordBox from '../component/wordBox/wordBox'
 import Image from 'next/image'
 import './guessTheWord.css'
-import { redirect, useRouter } from 'next/navigation'
-import { LegacyRef, useEffect, useRef, useState } from 'react'
-import { nameEasyArr, type nameEasyArrType } from './words'
+import { useRouter } from 'next/navigation'
+import { useRef, useState } from 'react'
+import { nameEasyArr } from './words'
 
 const handleRandom = (NumOfRand: number) => {
     let randomIntTem: number = Math.floor(Math.random() * NumOfRand)
     return randomIntTem
 }
-
-let tracker: number = 0
-let trackerForUseEffect: number = 0
-//let selectedWordPlayV: string[] = []
-//let randomInt4: number = handleRandom(5) //0 -> 4
-//let randomInt3: number = handleRandom(4) //0 -> 3
-//let randomInt25: number = handleRandom(25) //0 -> 24
-//let heartArr: number[] = [1, 1, 1, 1, 1, 1]
 
 let selectedWordPlayV: string[] = []
 let randomInt4: number = handleRandom(5)
@@ -49,28 +41,21 @@ export default function GuessPage() {
             selectedWordPlayV.push('')
         }
         if (selectedWordArr.length == 4) {
-            console.log('it has 4 length')
             let hintChar: string = selectedWordArr[randomInt3]
             for (let i = 0; i < selectedWordArr.length; i++) {
                 if (selectedWordArr[i] == hintChar) {
                     selectedWordPlayV.splice(i, 1, hintChar)
-                    console.log(selectedWordPlayV)
                     setselectedWordPlayForRender(selectedWordPlayV)
-                    //setTriggerRender((prev) => !prev)
                     break
                 }
             }
         }
         if (selectedWordArr.length == 5) {
-            console.log('it has 5 length')
             let hintChar: string = selectedWordArr[randomInt4]
-            console.log(hintChar)
             for (let i = 0; i < selectedWordArr.length; i++) {
                 if (selectedWordArr[i] == hintChar) {
                     selectedWordPlayV.splice(i, 1, hintChar)
-                    console.log(selectedWordPlayV)
                     setselectedWordPlayForRender(selectedWordPlayV)
-                    //setTriggerRender((prev) => !prev)
                     console.log('IT PASSED THE RENDERED')
                 }
             }
@@ -102,21 +87,15 @@ export default function GuessPage() {
                 window.alert('Guess one character only!!')
                 return
             } else {
-                console.log(selectedWordPlayV)
                 let wordForChecking = [...selectedWordPlayV]
 
                 //Doing validation of how system adding userinput into wordBox
                 for (let i = 0; i < selectedWordArr.length; i++) {
                     if (selectedWordArr[i] == userinput) {
-                        console.log('it about to slice in wordbox :')
-                        console.log(selectedWordPlayV)
-                        console.log('DAMN')
                         selectedWordPlayV.splice(i, 1, userinput)
-                        //setselectedWordPlayForRender(selectedWordPlayV)
                     }
                 }
 
-                //We checking if the player guess correct or not
                 if (
                     wordForChecking.every(
                         (element, index) => element == selectedWordPlayV[index]
@@ -151,11 +130,9 @@ export default function GuessPage() {
                         router.replace('/tryAgain')
                         return
                     } else {
-                        console.log('PLAYER STILL HAVE LIFE')
                         for (let i = 0; i < heartArr.length; i++) {
                             if (heartArr[i] == 1) {
                                 heartArr[i] = 0
-                                console.log(heartArr)
                                 let heartArrPrep = [...heartArr]
                                 setheartArrforRender(heartArrPrep)
                                 break
