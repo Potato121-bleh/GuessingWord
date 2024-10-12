@@ -174,16 +174,12 @@ export default function GuessPage() {
                         return
                     }
                 }
-                //REDIRECT IS NOT WORKING
                 selectedWordPlayV = []
                 randomInt4 = handleRandom(5)
                 randomInt3 = handleRandom(4)
                 randomInt25 = handleRandom(25)
                 heartArr = [1, 1, 1, 1, 1, 1]
-                //window.alert('You WIN')
                 router.replace('/winner')
-
-                //redirect('/Winnder-Winner-chicken-dinner')
             }
         } else {
             window.alert('Please Guess something!')
